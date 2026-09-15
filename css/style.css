@@ -6,6 +6,15 @@ body {
 
 header,
 main,
+
+section {
+  margin-bottom: 24px;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
 footer {
   padding: 20px;
 }
