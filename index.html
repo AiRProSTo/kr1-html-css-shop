@@ -6,6 +6,7 @@
   <title>Главная - ShopProject</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+<script src="js/main.js" defer></script>
 <body>
   <header>
     <div class="site-header">
@@ -49,18 +50,27 @@
         <h3>Товар 1</h3>
         <p>Краткое описание учебного товара.</p>
         <p>Цена: 1000 руб.</p>
+        <button type="button" class="button order-button">
+          Оформить заявку
+        </button>
       </article>
 
       <article class = "product-card">
         <h3>Товар 2</h3>
         <p>Краткое описание учебного товара</p>
         <p>Цена: 1500 руб.</p>
+        <button type="button" class="button order-button">
+          Оформить заявку
+        </button>
       </article>
 
       <article class = "product-card">
         <h3>Товар 3</h3>
         <p>Краткое описание товара.</p>
         <p>Цена: 2000 руб.</p>
+        <button type="button" class="button order-button">
+          Оформить заявку
+        </button>
       </article>
   </section>
 
@@ -87,5 +97,50 @@
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <dialog id="order-dialog" class="order-dialog">
+    <h2>Оформление заявки</h2>
+
+    <form id="order-form">
+      <div class="form-field">
+        <label for="customer-name">Ваше имя</label>
+        <input type="text" id="customer-name" name="customerName" required>
+      </div>
+
+      <div class="form-field">
+        <label for="customer-email">Электронная почта</label>
+        <input type="email" id="customer-email" name="customerEmail" required>
+      </div>
+
+      <div class="form-field">
+        <label for="customer-phone">Телефон</label>
+        <input 
+        type="tel" 
+        id="customer-phone" 
+        name="customerPhone"
+        placeholder="+79991234567"
+        pattern="(/+7|8)[0-9]{10}"
+        title="Введите 11 цифр"
+        autocomplete="tel"
+        required
+      >
+      </div>
+
+      <div class="form-field">
+        <label for="order-comment">Комментарий к заказу</label>
+        <textarea id="order-comment" name="comment" rows="4"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="button">
+          Отправить заявку
+        </button>
+
+        <button type="button" id="close-dialog">
+          Закрыть
+        </button>
+      </div>
+    </form>
+  </dialog>
 </body>
 </html>

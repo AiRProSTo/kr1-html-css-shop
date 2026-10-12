@@ -101,3 +101,51 @@ header {
   border-left: 4px solid #0057b8;
   background-color: #f7f7f7;
 }
+
+.order-dialog {
+  width: 90%;
+  max-width: 450px;
+  padding: 24px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.order-dialog::backdrop {
+  background-color: rgba(0,0,0,0.6);
+}
+
+.order-dialog h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid #0057b8;
+  outline-offset: 2px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  cursor: pointer;
+}
