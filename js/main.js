@@ -14,6 +14,20 @@ closeButton.addEventListener("click", () =>{
 
 const orderForm = document.querySelector("#order-form");
 
+const formFields = orderForm.querySelectorAll("input, textarea");
+
+formFields.forEach((field) => {
+    field.addEventListener("invalid", () => {
+        field.setAttribute("aria-invalid", "true");
+    });
+
+    field.addEventListener("input", () => {
+        if (field.checkValidity()) {
+            field.removeAttribute("aria-invalid");
+        }
+    });
+});
+
 orderForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
