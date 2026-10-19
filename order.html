@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заказа — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/order.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__separator" aria-hidden="true">/</span>
+      <span class="breadcrumbs__current" aria-current="page">
+        Оформление заказа
+      </span>
+    </nav>
+
+    <section class="section">
+      <h1>Оформление заказа</h1>
+      <p>
+        Выберите товар и заполните контактные данные.
+        Это учебная форма — реальные заказы не отправляются.
+      </p>
+
+      <form id="checkout-form" class="checkout-form">
+        <div class="form-field">
+          <label class="form-field__label" for="product-select">
+            Товар
+          </label>
+
+          <select
+            id="product-select"
+            class="form-field__input"
+            name="product"
+            required>
+            <option value="">Выберите товар</option>
+            <option value="buds-fe">
+              Samsung Galaxy Buds FE — 5999 руб.
+            </option>
+            <option value="dm4-evo">
+              Dream Machines DM4 Evo — 2799 руб.
+            </option>
+            <option value="akko3098n">
+              Akko 3098N — 8100 руб.
+            </option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field__label" for="checkout-name">
+            Ваше имя
+          </label>
+          <input
+            class="form-field__input"
+            type="text"
+            id="checkout-name"
+            name="customerName"
+            autocomplete="name"
+            required>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field__label" for="checkout-email">
+            Электронная почта
+          </label>
+          <input
+            class="form-field__input"
+            type="email"
+            id="checkout-email"
+            name="customerEmail"
+            autocomplete="email"
+            required>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field__label" for="checkout-phone">
+            Телефон
+          </label>
+          <input
+            class="form-field__input"
+            type="tel"
+            id="checkout-phone"
+            name="customerPhone"
+            pattern="(\+7|8)[0-9]{10}"
+            title="Введите номер +79991234567 или 89991234567"
+            autocomplete="tel"
+            required>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field__label" for="checkout-address">
+            Адрес доставки
+          </label>
+          <textarea
+            class="form-field__input"
+            id="checkout-address"
+            name="address"
+            rows="3"
+            required></textarea>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field__label" for="checkout-comment">
+            Комментарий
+          </label>
+          <textarea
+            class="form-field__input"
+            id="checkout-comment"
+            name="comment"
+            rows="3"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label>
+            <input type="checkbox" name="personalDataConsent" required>
+            Я согласен на обработку персональных данных
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button" type="submit">
+            Отправить заказ
+          </button>
+
+          <button class="button" type="reset">
+            Очистить форму
+          </button>
+        </div>
+      </form>
+
+      <p id="checkout-message"
+         class="success-message"
+         role="status"
+         hidden>
+        Заявка успешно оформлена (демонстрационный режим).
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ShopProject. Все права защищены.</p>
+  </footer>
+</body>
+</html>
