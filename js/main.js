@@ -39,5 +39,11 @@ orderForm.addEventListener("submit", (event) => {
     alert("Заявка отправлена!")
 
     orderForm.reset();
+
+    orderForm.reset();
+
+    formFields.forEach((field) => {
+        field.removeAttribute("aria-invalid");
+    });
     dialog.close();
 })
